@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CGPA Calculator</title>
+  </head>
+  <body>
+    <h1>CGPA Calculator for ECE students</h1>
+    <div>Sem 1 : <input id="sem1" type="text" /></div>
+    <br />
+    <div>Sem 2 : <input id="sem2" type="text" /></div>
+    <br />
+    <div>Sem 3 : <input id="sem3" type="text" /></div>
+    <br />
+    <div>Sem 4 : <input id="sem4" type="text" /></div>
+    <br />
+    <div>Sem 5 : <input id="sem5" type="text" /></div>
+    <br />
+    <div>Sem 6 : <input id="sem6" type="text" /></div>
+    <br />
+    <br />
+    <button onclick="calculate()" style="font-size: large">Calculate</button>
+    <script>
+      function calculate() {
+        let args = [0, 0, 0, 0, 0, 0];
+        args[0] = document.getElementById('sem1').value;
+        args[1] = document.getElementById('sem2').value;
+        args[2] = document.getElementById('sem3').value;
+        args[3] = document.getElementById('sem4').value;
+        args[4] = document.getElementById('sem5').value;
+        args[5] = document.getElementById('sem6').value;
+        if (args.length == 6) {
+          const cg =
+            (args[0] * 22 +
+              args[1] * 21.5 +
+              args[2] * 25.5 +
+              args[3] * 22 +
+              args[4] * 18 +
+              args[5] * 18) /
+            127;
+          const cgf = cg.toFixed(2);
+          alert(`Your current CGPA is : ${cgf}`);
+        }
+      }
+    </script>
+  </body>
+</html>
