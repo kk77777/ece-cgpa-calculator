@@ -43,12 +43,16 @@
       Sem 7 : <input id="sem7" type="text" />
       <span id="credit7"></span>
     </div>
+    <div>
+      Sem 8 : <input id="sem8" type="text" />
+      <span id="credit8"></span>
+    </div>
     <br />
     <br />
     <button onclick="calculate()" style="font-size: large">Calculate</button>
     <script>
-      let args = [0, 0, 0, 0, 0, 0, 0];
-      let credits = [22, 21.5, 25.5, 22, 24, 24, 17];
+      let args = [0, 0, 0, 0, 0, 0, 0, 0];
+      let credits = [22, 21.5, 25.5, 22, 24, 24, 17,12];
       let totalCredits = credits.reduce((a, b) => a + b, 0);
       window.onload = function () {
         for (let i = 0; i < 7; i++) {
@@ -65,6 +69,7 @@
         args[4] = document.getElementById('sem5').value;
         args[5] = document.getElementById('sem6').value;
         args[6] = document.getElementById('sem7').value;
+        args[7] = document.getElementById('sem8').value;
         if (args.length == 7) {
           const cg =
             (args[0] * credits[0] +
@@ -73,7 +78,8 @@
               args[3] * credits[3] +
               args[4] * credits[4] +
               args[5] * credits[5] +
-              args[6] * credits[6]) /
+              args[6] * credits[6] +
+              args[7] * credits[7]) /
             totalCredits;
           const cgf = cg.toFixed(2);
           alert(
